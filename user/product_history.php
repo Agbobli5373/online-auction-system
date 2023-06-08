@@ -74,6 +74,9 @@
 	<link rel="stylesheet" href="css/style.css">
 
     <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+    <!-- font awesome cdn link  -->
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
 <!-- header section starts  -->

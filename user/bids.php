@@ -217,7 +217,7 @@
                    <tr>
                         <td width="150"><div class="img-box"><img class="img" src="<?php echo 'data:image;base64,'.base64_encode($row3['product_imgs']).''?>"></div></td>
                         <td width="200"><p style='font-size:15px;'><?php echo $row3['product_name'];?></p></td>
-                        <td width="150"><h2 style='font-size:15px; color:red; '><i class="fa-solid fa-indian-rupee-sign"></i><?php echo number_format($row3['price']);?></h2></td>
+                        <td width="150"><h2 style='font-size:15px; color:red; '><i class="fa-solid fa-cedi-sign"></i><?php echo number_format($row3['price']);?></h2></td>
                         <td width="150">
                             
                             <h2 style='font-size:15px; color:red; '>
@@ -245,7 +245,7 @@
 
                         </td>
 
-                        <td width="90"><h2 style='font-size:15px; color:red; '><i class="fa-solid fa-indian-rupee-sign"></i><?php echo number_format($bid_amount);?></h2></td>
+                        <td width="90"><h2 style='font-size:15px; color:red; '><i class="fa-solid fa-cedi-sign"></i><?php echo number_format($bid_amount);?></h2></td>
                         
                         <td width="300">
                             

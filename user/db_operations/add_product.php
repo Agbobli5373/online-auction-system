@@ -37,7 +37,7 @@
     if(!empty($product_name) && !empty($category) && !empty($subcategory) && !empty($product_desc) && !empty($end_time) && !empty($price)){
 
         
-        if(!($ending < $today_date)){
+        if(($ending)){
 
 
                 foreach($_FILES['product_imgs']['name'] as $key=>$image){

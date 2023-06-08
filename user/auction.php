@@ -297,7 +297,7 @@
                                 </div>
                                 <div class="left">
                                     <p><?php echo $data['product_name'];?></p>
-                                    <h2>Price:<span class="material-icons-outlined">currency_rupee</span><?php echo number_format($data['price']);?></h2>
+                                    <h2>Price:<span class="material-icons-outlined">GHC</span><?php echo number_format($data['price']);?></h2>
                                     <a href="product_detail.php?p_id=<?php echo $data['p_id']; ?>"><button>View Details</button></a>    
                                 </div>
                             </div>

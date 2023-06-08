@@ -61,7 +61,7 @@
 
             <td><span class="name"><?php echo $row['name'];?></span></td>
 
-            <td><span class="price"><span class="material-icons-outlined">currency_rupee</span><?php echo number_format($row['bid_amount']);?></span></td>
+            <td><span class="price"><i class="fa-solid fa-cedi-sign"></i><?php echo number_format($row['bid_amount']);?></span></td>
 
             <td> <span class="price"><?php echo $row['contact_no']; ?></span></td>
 

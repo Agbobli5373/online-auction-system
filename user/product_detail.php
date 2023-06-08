@@ -268,7 +268,7 @@ $bid=$fetch['bid_amount'];
 
         <h1 class="timer"><span class="material-icons-outlined">timer</span>&nbsp;&nbsp; <span id="countdown"></span> </h1>
 
-        <h4>Price: <span class="material-icons-outlined">currency_rupee</span><?php echo number_format($product_data['price']); ?> </h4>
+        <h4>Price: <span class="material-icons-outlined"> <span>GHc </span> </span><?php echo number_format($product_data['price']); ?> </h4>
 <!-- displaying owner details to product winner after auction close -->
         <?php
 
@@ -412,7 +412,7 @@ if($auction_status !== 'close'){
             <span class="name"><?php echo $row2['name'];?></span>
 
 
-            <span class="price"><span class="material-icons-outlined">currency_rupee</span><?php echo number_format($highest_bid);?></span>
+            <span class="price"><span class="material-icons-outlined">currency_cedi</span><?php echo number_format($highest_bid);?></span>
 
         </div>
 
