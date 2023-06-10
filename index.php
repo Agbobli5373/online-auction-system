@@ -50,10 +50,10 @@
               <i class="fas fa-eye-slash showhidepw"></i>
             </div>
 
-            <!-- <div class="remember-me">
+           <div class="remember-me">
               <input type="checkbox" name="remember" id="remember" class="remember"/>
               <span>Remember Me</span>
-            </div> -->
+            </div> 
 
             <input type="submit" value="Login" class="signin solid" />
 

@@ -104,11 +104,7 @@
             </tr>
         </table>
     </a>
-<!-- 
-    <form action="" class="search-form">
-        <input type="search" id="search-box" placeholder="search here...">
-        <label for="search-box" class="fas fa-search"></label>
-    </form> -->
+
 
     <table class="button-header">
 
@@ -124,7 +120,7 @@
 
             <ul>
                 
-                <!-- <li><a href="#">Update</a></li> -->
+      
                 <li>
 
                     <a>
@@ -400,29 +396,6 @@
 <!--popup -->
    
 
-        
-            <!-- <div class="box">
-                <div class="img-box">
-                    <img src=${image}></img>
-                </div>
-                <div class="left">
-                    <p>${title}</p>
-                    <h2>${price}</h2>
-                    <button>Add to Cart</button>    
-                </div>
-            </div>
-
-
-        </div> -->
-
-        <!-- <div class="sidebar">sidebar</div> -->
-
-<!-- footer section starts  -->
-
-
-
-
-<!-- footer section ends -->
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>

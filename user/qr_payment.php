@@ -154,8 +154,8 @@
 
 
                             $mail->Body ="Payment Recieved By QR Scanning On Your Auction Product";
-                            $mail->AltBody ="Your Auction product $product_name's Payment $amount is Recieved From Product Winning Bidder $name.Check Google Pay And Account Balance Confirm The Payment .....!!!. Pending Amount for Product is $pending_amount.";
-                            $mail->MsgHTML("<p>Your Auction product $product_name Payment '".number_format($amount)."' is Recieved From Product Winning Bidder $name. <br><br> Check Your Google Pay Account Balance and Confirm The Payment Is Done OR Not .....!!! </h2><br>
+                            $mail->AltBody ="Your Auction product $product_name's Payment $amount is Recieved From Product Winning Bidder $name.Check MoMo Pay And Account Balance Confirm The Payment .....!!!. Pending Amount for Product is $pending_amount.";
+                            $mail->MsgHTML("<p>Your Auction product $product_name Payment '".number_format($amount)."' is Recieved From Product Winning Bidder $name. <br><br> Check Your MoMo Pay Account Balance and Confirm The Payment Is Done OR Not .....!!! </h2><br>
                                             <p>Pending Amount for your Product is  '".number_format($pending_amount)."'.</p>
                                             <p>Total Paid Amount: '".number_format($sum)."'</p><br>
                                             <br><p>Please this email for later payment confirmation.</p>
@@ -197,7 +197,7 @@
                                 $mail->MsgHTML("<p>$name Your Payment is in confirmation for Product $product_name.<br><br> Wait For Confirmation from owner of Product.<br><br>You Get Email if Payment is Confirmed or Declined by owner...!!!.</p> 
                                                 <h2>Your Total paid amount is :- '".number_format($sum)."'</h2>
                                                 <h2>Your Pending Amount :- '".number_format($pending_amount)."'</h2>
-                                                <br><br><p>Your Uploaded Google Payment SS Is : </p>");
+                                                <br><br><p>Your Uploaded MoMo Payment SS Is : </p>");
 
 
                                 if(!$mail->Send()){
@@ -219,7 +219,7 @@
             else{
 
                 if(empty($paydone_tmp)){
-                    $err[]="Please Select Payment Done Google Pay Screen Shot...!!";
+                    $err[]="Please Select Payment Done MoMo Pay Screen Shot...!!";
                 }
                 else if(empty($amount)){
                     $err[]="Please Enter Amount...";
@@ -370,7 +370,7 @@
     <br><br>
 
     <div>
-        <h3>Select Payment Done Google Pay ScreenShot :-</h3>
+        <h3>Select Payment Done MoMo Pay ScreenShot :-</h3>
         <input type="file" name="pay_done" id="pay_done" class="field">
     </div>
 

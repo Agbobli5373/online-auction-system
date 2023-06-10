@@ -69,22 +69,14 @@
                     <h1>QRCode Image</h1>
                     <input type="file" name="qrcode" id="qrcode" accept="image/*">
                     <label for="qrcode" id="qrcode-preview">
-                        <img src="https://bit.ly/3ubuq5o" alt="Please Select QRcode Image">
+                        <img src="https://bit.ly/3ubuq5o" alt="Please Select MoMo QRcode Image">
                         <div>
                         <span>+</span>
                         </div>
                     </label>
                 </div>
 
-                <!-- <div class="form-element">
-                    <input type="file" id="file-3" accept="image/*">
-                    <label for="file-3" id="file-3-preview">
-                        <img src="https://bit.ly/3ubuq5o" alt="">
-                        <div>
-                        <span>+</span>
-                        </div>
-                    </label>
-                </div> -->
+                
 
             </div>
 
