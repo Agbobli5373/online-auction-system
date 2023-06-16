@@ -33,6 +33,26 @@
     $data=file_get_contents($url);
     $row=json_decode($data,true);
 
+    function isStrongPassword($password) {
+        if (strlen($password) < 8) {
+            return false;
+          }
+        
+          // Check if the password contains both uppercase and lowercase letters
+          if (!preg_match('/[a-z]/', $password) || !preg_match('/[A-Z]/', $password)) {
+            return false;
+          }
+        
+          // Check if the password contains at least one number
+          if (!preg_match('/\d/', $password)) {
+            return false;
+          }
+        
+          // The password is strong
+          return true;
+      }
+
+
     //checking fields are not empty
     if(!empty($name) && !empty($contact_no) && !empty($email) && !empty($address)  && !empty($password) && !empty($confirmpass)){
 
@@ -56,79 +76,85 @@
                 //checking password and confirm password match
                 
                     if($password == $confirmpass){
-
-                        $otp=mt_rand(1111,9999); //creating 4 digit otp
-
-                        $enc_otp=md5($otp);
-
-                        $sql2=mysqli_query($con,"INSERT into users VALUES(null,'$name','$contact_no',
-                                            '$email','$address','$password','$account_status','".md5($otp)."','$verification')");
-
-                        if($sql2){
-
-                            $sql3=mysqli_query($con,"SELECT * from users where email='$email'");
-
-                            if(mysqli_num_rows($sql3) > 0){
-
-                                $row=mysqli_fetch_assoc($sql3); //fetch data
-
-                                //start mail function
-                                if($otp){
-
-                                    $mail=new PHPMailer(true);
-
-                                    $mail->IsSMTP();
-                                    $mail->Mailer="smtp";
-
-                                    $mail->SMTPDebug =0;
-                                    $mail->SMTPAuth =TRUE;
-                                    $mail->SMTPSecure ='tls';
-                                    $mail->Port =587;
-                                    $mail->Host ="smtp.gmail.com";
-                                    $mail->Username ="mistrymadan699@gmail.com";
-                                    $mail->Password ="qmskesryhgwkihzw";
-
-                                    $mail->SetFrom('mistrymadan699@gmail.com','Auction System');
-                                    $mail->addAddress($email);
-                                    // $mail->addAddress($email,$name);
-
-                                    $mail->IsHTML(true);
-                                    $mail->Subject ="Verification for Email";
-                                    $mail->Body ="Verify Your Email Accout";
-                                    $mail->AltBody ="Hello User We get Registration Request from email $email. Verify its you. Your OTP is $otp";
-                                    $mail->MsgHTML("<h3>Hello User</h3> <br> <h3>We get Registration Request from email $email.</h3> <br> <h3> Verify its you.</h3> <br> <h1>Your OTP is $otp<h1>");
-
-                                    if(!$mail->Send()){
-                                        echo "Error Sending Mail";
-                                    }
-                                    else{
-
-                                        //Set Value null after form submit
-                                        $name="";
-                                        $contact_no="";
-                                        $email="";
-                                        $address="";
-                                        $password="";
-                                        $confirmpass="";
-
-
-                                        $_SESSION['u_id']=$row['u_id'];
-                                        $_SESSION['email']=$row['email'];
-                                        $_SESSION['otp']=$enc_otp;
-                                        
-                                        echo "success";
-                                    }          
-                                }
-                                //mail function end
-                            }
-                            else{
-                                echo "Don't Recognize Email Account...!!!";
-                            }
-
+                        if(isStrongPassword($password) == "false"){
+                            
                         }else{
-                            echo "Registration Failed....!!!Try Again";
+                            $otp=mt_rand(1111,9999); //creating 4 digit otp
+
+                            $enc_otp=md5($otp);
+    
+                            $sql2=mysqli_query($con,"INSERT into users VALUES(null,'$name','$contact_no',
+                                                '$email','$address','$password','$account_status','".md5($otp)."','$verification')");
+    
+                            if($sql2){
+    
+                                $sql3=mysqli_query($con,"SELECT * from users where email='$email'");
+    
+                                if(mysqli_num_rows($sql3) > 0){
+    
+                                    $row=mysqli_fetch_assoc($sql3); //fetch data
+    
+                                    //start mail function
+                                    if($otp){
+    
+                                        $mail=new PHPMailer(true);
+    
+                                        $mail->IsSMTP();
+                                        $mail->Mailer="smtp";
+    
+                                        $mail->SMTPDebug =0;
+                                        $mail->SMTPAuth =TRUE;
+                                        $mail->SMTPSecure ='tls';
+                                        $mail->Port =587;
+                                        $mail->Host ="smtp.gmail.com";
+                                        $mail->Username ="mistrymadan699@gmail.com";
+                                        $mail->Password ="qmskesryhgwkihzw";
+    
+                                        $mail->SetFrom('mistrymadan699@gmail.com','Auction System');
+                                        $mail->addAddress($email);
+                                        // $mail->addAddress($email,$name);
+    
+                                        $mail->IsHTML(true);
+                                        $mail->Subject ="Verification for Email";
+                                        $mail->Body ="Verify Your Email Accout";
+                                        $mail->AltBody ="Hello User We get Registration Request from email $email. Verify its you. Your OTP is $otp";
+                                        $mail->MsgHTML("<h3>Hello User</h3> <br> <h3>We get Registration Request from email $email.</h3> <br> <h3> Verify its you.</h3> <br> <h1>Your OTP is $otp<h1>");
+    
+                                        if(!$mail->Send()){
+                                            echo "Error Sending Mail";
+                                        }
+                                        else{
+    
+                                            //Set Value null after form submit
+                                            $name="";
+                                            $contact_no="";
+                                            $email="";
+                                            $address="";
+                                            $password="";
+                                            $confirmpass="";
+    
+    
+                                            $_SESSION['u_id']=$row['u_id'];
+                                            $_SESSION['email']=$row['email'];
+                                            $_SESSION['otp']=$enc_otp;
+                                            
+                                            echo "success";
+                                        }          
+                                    }
+                                    //mail function end
+                                }
+                                else{
+                                    echo "Don't Recognize Email Account...!!!";
+                                }
+    
+                            }else{
+                                echo "Registration Failed....!!!Try Again";
+                            }
+                        
+      
                         }
-                    }
+
+                  }
                     else{
                         echo "Confirm Password Don't Match";
                     }
@@ -146,5 +172,3 @@
     else{
         echo "All Input Fields Are Required";
     }
-    
-?>

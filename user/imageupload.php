@@ -3,7 +3,7 @@
 
     include "../config/connect.php";
 
-    echo "<script>alert('Upload Your Profile Pic And Google Pay QRCode Image....')</script>";
+    echo "<script>alert('Upload Your Profile Pic And MoMo Pay QRCode Image....')</script>";
 
     $u_id=$_SESSION['u_id'];
 

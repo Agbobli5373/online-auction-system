@@ -221,15 +221,10 @@
                 ?>
                     <div class="card-body border p-0">
                         <p>
-                            <!-- <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
-                                data-bs-toggle="collapse" id="qr_scan" role="button" aria-expanded="true"
-                                aria-controls="collapseExample">
-                                <span class="fw-bold">QR CODE</span>
-                               
-                            </a> -->
+                            
 
                             <h3>Owner QRCode image Is Not Verified.</h3>
-                            <h3>After Verified You Are Able to Pay Using Google Pay QR Scanning.</h3>
+                            <h3>After Verified You Are Able to Pay Using MoMo Pay QR Scanning.</h3>
                         </p>
                         <!-- <div class="collapse show p-3 pt-0" id="collapseExample">
                             <div class="row">

@@ -90,11 +90,6 @@
               <textarea name="address" id="address" placeholder="Enter Your Home Address" ></textarea>
             </div>
 
-          <!--  <div class="input-field">
-              <i class="fas fa-hashtag"></i>
-              <input type="number_format" name="pincode" id="pincode" placeholder="Enter Your Area Pincode" title="Enter Numbers Only"/>
-            </div> -->
-
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" name="password" class="password1" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
