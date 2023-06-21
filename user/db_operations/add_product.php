@@ -73,8 +73,7 @@
 
 
                     }
-
-                   
+                
                     if($insert !== false){
 
                         //Inserting Data into Product Table
@@ -126,13 +125,10 @@
                 }else{
                     echo "Select Future Date & Time";
                 }//date time condition
-
-    
     }
     else{
         echo "All input fields required...!";
     }
 
 
-    //$sql=mysqli_query($con,"INSERT INTO products Values('','$product_name','$category','$subcategory','$pro')");
 ?>
