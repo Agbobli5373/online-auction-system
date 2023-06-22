@@ -90,7 +90,7 @@
                         if(!($bid_amount <= $current_bid)){
                             
                             // if($bid_amount !== $bid_amount+100){
-                            //     echo "Increase Bid by +100 Rs";
+                            //     echo "Increase Bid by +100 ";
                             // }
                             // else{
                                 $update=mysqli_query($con,"UPDATE auction SET current_bid='$bid_amount',wining_bidder='$uid' where a_id='$aid'");

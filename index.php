@@ -77,7 +77,7 @@
 
             <div class="input-field">
               <i class="fas fa-phone"></i>
-              <input type="tel" name="contact_no" required pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter a 10-digit number.')" oninput="setCustomValidity('')" id="contact_no" placeholder="Contact Number">            </div>
+              <input type="number" name="contact_no" required pattern="[0-9]{10}" oninvalid="setCustomValidity('Please enter a 10-digit number.')" oninput="setCustomValidity('')" id="contact_no" placeholder="Contact Number">            </div>
 
             <div class="input-field">
               <i class="fas fa-envelope"></i>

@@ -211,7 +211,7 @@
                 <input type="date" name="end_time" id="end_time" class="field" min="<?php echo $today?>">
                 <p>Select Your Product Image :-</p>
                 <input type="file" name="product_imgs[]" id="product_imgs" class="field" multiple>
-                <input type="text" name="price" class="field" pattern="[0-9]*" oninvalid="this.setCustomValidity('Enter Only Numbers')" oninput="this.setCustomValidity('')" placeholder="Enter Price">
+                <input type="number" name="price" class="field" pattern="[0-9]*" Pattern="^[+-]?\D+(\.\D+)?[Ee][+-]?\D+$" oninvalid="this.setCustomValidity('Enter Only Numbers')" oninput="this.setCustomValidity('')" placeholder="Enter Price">
             </div>
         
             <button type="submit" class="btn" name="add_product">Submit</button>

@@ -91,13 +91,13 @@
 
                                 $display=mysqli_fetch_assoc($sql3);
 
-                                $current_bid=$display['current_bid']+100;
+                                $current_bid=$display['current_bid'];
 
-                                $value=$price*70/100;
+                                $value=$price * 70/100;
 
                             // echo $value;
 
-                                    if($bid_amount >= $value){
+                                    if($bid_amount > $price){
 
                                         if(!empty($current_bid)){
 
@@ -155,7 +155,7 @@
                                 }
                                 else{
 
-                                    $errMsg[]="Price must be Greater than 70%($value) of $price";
+                                    $errMsg[]="Price must be Greater than  $price";
                             
                                 }
                             }
@@ -338,7 +338,7 @@
 
             <div class="info">
                 <!-- <input type="file" name="product_imgs" id="product_imgs" class="field" multiple> -->
-                <input type="text" name="bid_amount" id="bid_amount" class="field" pattern="[0-9]*" oninvalid="this.setCustomValidity('Enter Only Numbers')" oninput="this.setCustomValidity('')" placeholder="Enter Price">
+                <input type="number" name="bid_amount" id="bid_amount" class="field" pattern="[0-9]*" oninvalid="this.setCustomValidity('Enter Only Numbers')" oninput="this.setCustomValidity('')" placeholder="Enter Price">
             </div>
         
             <button type="submit" class="btn" name="place_bid">Submit</button>
