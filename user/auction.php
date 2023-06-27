@@ -206,22 +206,22 @@
 
     if($categories == 'All'){
 
-        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' GROUP BY a_id  LIMIT $start_from,$num_per_page";
+        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND products.isApproved='approve' GROUP BY a_id  LIMIT $start_from,$num_per_page";
 
     }
     else if(!empty($search)){
 
-        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND product_name LIKE '%$search%' GROUP BY a_id  LIMIT $start_from,$num_per_page";
+        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND products.isApproved='approve' AND product_name LIKE '%$search%' GROUP BY a_id  LIMIT $start_from,$num_per_page";
 
     }
     else if(!empty($search) && !empty($categories)){
 
-        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND product_name LIKE '%$search%' AND c_id='$categories' GROUP BY a_id  LIMIT $start_from,$num_per_page";
+        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid'AND products.isApproved='approve' AND product_name LIKE '%$search%' AND c_id='$categories' GROUP BY a_id  LIMIT $start_from,$num_per_page";
 
     }
     else{
 
-        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND category='$categories' GROUP BY a_id  LIMIT $start_from,$num_per_page";
+        $sql="SELECT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id where auction.auction_status='active' and owner!='$uid' AND products.isApproved='approve' AND category='$categories' GROUP BY a_id  LIMIT $start_from,$num_per_page";
 
     }
 ?>

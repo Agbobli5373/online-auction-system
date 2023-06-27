@@ -60,7 +60,7 @@
 
     $disp2=mysqli_fetch_assoc($qry);
 
-    $sql=mysqli_query($con,"SELECT  products.p_id,products.product_name,products.price,products.confirm,product_imgs.product_imgs,auction.end_time,auction.auction_status FROM products INNER JOIN product_imgs on products.p_id=product_imgs.p_id INNER JOIN auction on products.p_id=auction.p_id Where owner !='$uid' AND auction_status='active' GROUP BY p_id ORDER BY rand() LIMIT 3");
+    $sql=mysqli_query($con,"SELECT  products.p_id,products.product_name,products.price,products.confirm,product_imgs.product_imgs,auction.end_time,auction.auction_status FROM products INNER JOIN product_imgs on products.p_id=product_imgs.p_id INNER JOIN auction on products.p_id=auction.p_id Where owner !='$uid' AND auction_status='active' AND products.isApproved='approve' GROUP BY p_id ORDER BY rand() LIMIT 3");
 
     $qry=mysqli_query($con,"SELECT * from users where u_id='$uid' ");
 	$imgs1=mysqli_query($con,"SELECT * from users_imgs where u_id='$uid'");

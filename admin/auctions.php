@@ -226,7 +226,7 @@ else{
 $options = array(5,10,15,20,50);
 
 //selection of active & closed auction
-$auction = array('all','active','close','recent Added');
+$auction = array('all','active','close','recent Added','pending');
 
             echo '<form method="post">
               <select name="displayAmount" class="box" onchange="this.form.submit();">';
@@ -272,6 +272,9 @@ $auction = array('all','active','close','recent Added');
   }
   else if($select == 'recent Added'){
     $sql="SELECT DISTINCT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id INNER JOIN users on products.owner=users.u_id  GROUP BY a_id ORDER BY a_id DESC LIMIT $start_from,$num_per_page";
+  }
+  else if($select == 'pending'){
+    $sql="SELECT DISTINCT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id INNER JOIN users on products.owner=users.u_id where isApproved='pending' GROUP BY a_id ORDER BY a_id DESC LIMIT $start_from,$num_per_page";
   }
   else if(!empty($_REQUEST['searching'])){
     $sql="SELECT DISTINCT * from products INNER JOIN auction on products.p_id=auction.p_id INNER JOIN product_imgs on products.p_id=product_imgs.p_id INNER JOIN users on products.owner=users.u_id where products.product_name LIKE '%$search%' GROUP BY a_id LIMIT $start_from,$num_per_page";
@@ -521,6 +524,8 @@ $auction = array('all','active','close','recent Added');
 
               <a href="auctions.php"><button>Back</button></a>
 
+              <br><br>
+              <a href="controller/product_approve.php?p_id=<?php echo $pid;?>&email=<?php echo $display['email']; ?>"><button>Approve</button></a>
               <br><br>
               
               <a href="controller/product_remove.php?p_id=<?php echo $pid;?>&email=<?php echo $display['email']; ?>"><button>Remove</button></a>
